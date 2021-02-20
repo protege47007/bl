@@ -1,17 +1,23 @@
 const express = require('express');
 const bp = require('body-parser');
-const { urlencoded } = require('body-parser');
 
 const app = express();
 
-app.use('view engine', 'ejs');
+app.set('view engine', 'ejs');
 app.use(bp.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 app.get('/', (req, res)=>{
-
+    res.render('home', {title: "Home"});
 });
 
+app.get('/about', (req, res)=>{
+    res.render('about', {title: "About Us"});
+});
+
+app.get('/contact', (req, res)=>{
+    res.render('contact', {title: "Contact Us"});
+});
 
 
 
