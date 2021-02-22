@@ -1,0 +1,26 @@
+.com{
+    display: flex;
+    flex-direction: column;
+    
+    width: 88%;
+}
+.title{
+    margin-bottom: 5px;
+    padding: 5px;
+}
+.title:focus, .txtarea:focus{
+    outline: none;
+    border-bottom:  3px solid;
+    border-color: #1abc9c;
+}
+.txtarea{
+    padding: 5px;
+    resize: none;
+    height: 45vh;
+    
+}
+.com > button{
+    width: 100px;
+    margin-top: 10px;
+    align-self: flex-end;
+}
