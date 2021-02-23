@@ -1,3 +1,11 @@
+body{
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+}
+.d{
+    padding-bottom: 150px;
+}
 .container-fluid{
     padding-top: 70px;
     padding-bottom: 70px;
@@ -14,8 +22,8 @@
 .navbar-nav li a:hover{
     color: #1abc9c !important;
 }
-
-/*.footer-padding{
+/*
+.footer-padding{
     padding-bottom: 60px;
 }
 .footer{
@@ -43,5 +51,5 @@
     line-height: 2rem;
     color: #000;
     position: absolute;
-    bottom: 0 !important;
+    bottom: 0;
 }

@@ -1,4 +1,6 @@
-<% for(let i = 0; i < post.length; i++) { %>
-    <h3> <%= post[i].title %></h3>
-    <p class="data"><%= post[i].body %></p>
-<% } %>
+<% post.forEach((e)=> { %>
+    <div class="post-container">
+        <h5> <%= e.title %></h5>
+        <p class="data"><%= e.body.substring(0, 280)+ "..." %> <a href="/posts/<%= e.title %> ">Read more</a></p>
+    </div>
+<% }) %>

@@ -2,6 +2,7 @@
 const express = require('express');
 const bp = require('body-parser');
 const ejs = require('ejs');
+const _ = require('lodash');
 
 
 const homeInfo = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum iusto quia fugiat, minus debitis quo deleniti repellat sint ipsum quae ex dicta, eum dolor hic saepe excepturi voluptas error tenetur delectus similique quas sequi vel? Sint repellendus quam quia pariatur temporibus officia in, ad libero dignissimos neque minus impedit nihil!";
@@ -17,7 +18,8 @@ app.use(express.static('public'));
 app.get('/', (req, res)=>{
     res.render('home', {
         title: "Home",
-        info: homeInfo
+        info: homeInfo,
+        post: posts
     });
 });
 
@@ -52,22 +54,25 @@ app.post('/compose', (req, res)=>{
         body: req.body.txt
     };
     posts.push(newComp);
-    res.redirect('/post');
+    res.redirect('/');
 });
 
 //post page section
 app.get('/post', (req, res)=>{
-    res.render('post', {title: "Post", post: posts});
+    res.render('post', {title: "Post"});
 });
 
 //get params
-app.get('/post/:page', (req, res)=>{
+app.get('/posts/:page', (req, res)=>{
     posts.forEach((e)=>{
-        if(e.title === req.params.page){
-            console.log("Match FOund for: " + req.params.page);
-        }
+        if(_.lowerCase(e.title) === _.lowerCase(req.params.page)){
+            res.render('temp', {
+                title: e.title,
+                jH: e.title,
+                j: e.body
+            })
+        }  
     })
-    
 })
 
 

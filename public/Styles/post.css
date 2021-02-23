@@ -3,6 +3,7 @@
     max-width: 100%; 
 }
 .data{
-    word-wrap: break-word;
+    display: inline-block;
     text-align: justify;
+    text-justify: inter-word;
 }
