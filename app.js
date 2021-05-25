@@ -77,6 +77,6 @@ app.get('/posts/:page', (req, res)=>{
 
 
 //Server initialisation
-app.listen('3030', ()=>{
+app.listen('3031', ()=>{
     console.log("Server is Live and running!");
 })
