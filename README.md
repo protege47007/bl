@@ -1,1 +1,1 @@
-# this is a work in progress portfolio site for me..
+# this is a work in progress blog site for me..
